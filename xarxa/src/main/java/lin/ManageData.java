@@ -1,4 +1,4 @@
-package xarxa2;
+package lin;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -32,10 +32,22 @@ public class ManageData {
         List<Element> elements = (List<Element>) arrel.getChildren("Programmer");
         Iterator<Element> it = elements.iterator();
         while (it.hasNext()) {
-        	Programmer p = new Programmer();
+        	//Getting name
         	Element programmerElement = (Element)it.next();
-        	p.setName(programmerElement.getAttributeValue("name"));
-            programmers.add(p);
+        	String name = programmerElement.getAttributeValue("name");
+        	Programmer p = new Programmer(name);
+        	
+        	//Getting Recommendations
+        	Element recommendations = programmerElement.getChild("Recommendations");
+        	List<Element> recs = (List<Element>) recommendatios.getChildren("Recommendation");
+            Iterator<Element> it2 = recs.iterator();
+            while (it2.hasNext()) {
+            	String rName = (Element)it2.next().getText();
+            	p.addRecommendation(new Programmer(rName));
+            }
+            
+            //Add programmer to list
+        	programmers.add(p);
         }
 
 		return programmers;
