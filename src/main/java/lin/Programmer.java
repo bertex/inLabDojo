@@ -10,7 +10,7 @@ public class Programmer {
 	float karma=1;
 	float prevKarma=1;
 	String name;
-
+	
 	public Programmer () {
 		this.name="Anonymous";
 	}	
@@ -18,6 +18,10 @@ public class Programmer {
 	public Programmer (String name) {
 		this.name=name;
 	}
+	
+	public void setName (String name) {		
+		this.name=name;
+	}	
 	
 	public List<Programmer> getRecommends() {
 		return recommends;

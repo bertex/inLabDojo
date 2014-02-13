@@ -1,4 +1,4 @@
-package xarxa2;
+package lin;
 
 import static org.junit.Assert.*;
 

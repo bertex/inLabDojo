@@ -1,4 +1,4 @@
-package xarxa2;
+package lin;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
