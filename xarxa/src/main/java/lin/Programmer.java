@@ -7,8 +7,8 @@ public class Programmer {
 	
 	List<Programmer> recommends=new ArrayList<Programmer>();
 	List<Programmer> recommendedBy=new ArrayList<Programmer>();
-	float karma=1;
-	float prevKarma=1;
+	List<Skill> skills=new ArrayList<Skill>Programmer>();
+	float karma=0;
 	String name;
 
 	public Programmer () {
@@ -26,10 +26,18 @@ public class Programmer {
 	public float getKarma() {
 		return karma;
 	}
+	
+	public List<Skills> getSkills() {
+		return skills;
+	}
 
 	public void addRecomendation(Programmer p2) {
 		recommends.add(p2);		
 		p2.addRecommendedBy(this);
+	}
+	
+	public void addSkill(Skill s) {
+		skills.add(s);
 	}
 
 	private void addRecommendedBy(Programmer p2) {
@@ -41,17 +49,8 @@ public class Programmer {
 	}
 
 	public void setKarma(float karma) {
-		this.prevKarma=this.karma;
 		this.karma=karma;		
 	}
-	
-	public void setPrevKarma(float prevKarma) {
-		this.prevKarma=prevKarma;		
-	}
-	
-	public float getPrevKarma() {
-		return prevKarma;		
-	}	
 
 	public List<Programmer> getRecommendedBy() {		
 		return recommendedBy;
