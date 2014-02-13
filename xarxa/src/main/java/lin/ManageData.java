@@ -39,11 +39,11 @@ public class ManageData {
         	
         	//Getting Recommendations
         	Element recommendations = programmerElement.getChild("Recommendations");
-        	List<Element> recs = (List<Element>) recommendatios.getChildren("Recommendation");
+        	List<Element> recs = (List<Element>) recommendations.getChildren("Recommendation");
             Iterator<Element> it2 = recs.iterator();
             while (it2.hasNext()) {
-            	String rName = (Element)it2.next().getText();
-            	p.addRecommendation(new Programmer(rName));
+            	String rName = it2.next().getText();
+            	p.addRecomendation(new Programmer(rName));
             }
             
             //Add programmer to list
