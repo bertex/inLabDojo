@@ -20,6 +20,7 @@ public class Programmer {
 	
 	public List<Programmer> getRecommends() {
 		return recommends;
+		//
 	}
 	
 	public float getKarma() {
