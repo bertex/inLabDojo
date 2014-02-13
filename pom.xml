@@ -19,6 +19,11 @@
 			<artifactId>jdom</artifactId>
 			<version>2.0.2</version>
 		</dependency>
+		<dependency>
+			<groupId>org.jgrapht</groupId>
+			<artifactId>jgrapht-jdk1.5</artifactId>
+			<version>0.7.3</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>xarxa</finalName>
