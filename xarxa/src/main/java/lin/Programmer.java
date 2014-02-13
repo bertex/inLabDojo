@@ -7,7 +7,7 @@ public class Programmer {
 	
 	List<Programmer> recommends=new ArrayList<Programmer>();
 	List<Programmer> recommendedBy=new ArrayList<Programmer>();
-	List<Skill> skills=new ArrayList<Skill>Programmer>();
+	List<Skill> skills=new ArrayList<Skill>();
 	float karma=0;
 	String name;
 
