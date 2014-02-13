@@ -61,4 +61,14 @@ public class Programmer {
 		return recommendedBy;
 	}
 	
+	public String toString() {
+		StringBuilder result=new StringBuilder();
+		result.append("Nom: "+name+"\nRecomends:");
+		for (Programmer p:getRecommends()) result.append(" "+p.getName());
+		result.append("\nRecomended by:");
+		for (Programmer p:getRecommendedBy()) result.append(" "+p.getName());
+		result.append("\n");
+		return result.toString();
+	}
+	
 }

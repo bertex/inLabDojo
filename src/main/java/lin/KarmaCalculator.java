@@ -15,9 +15,13 @@ public class KarmaCalculator {
 	public void calculateKarma() {
 		/*initialize();*/
 		maxDeltaKarma=1;
-		while (maxDeltaKarma>0.001) {
+		while (maxDeltaKarma>0.001) {			
 			maxDeltaKarma=0;
 			step();
+			for (Programmer p: programmers) {
+				System.out.println(p.getName()+" Karma:"+p.getKarma()+"("+p.getPrevKarma()+")");
+			}
+			System.out.println("---");
 		}
 	}
 	
