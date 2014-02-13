@@ -7,7 +7,7 @@ public class Programmer {
 	
 	List<Programmer> recommends=new ArrayList<Programmer>();
 	List<Programmer> recommendedBy=new ArrayList<Programmer>();
-	int karma=0;
+	float karma=0;
 	String name;
 
 	public Programmer () {
@@ -39,7 +39,7 @@ public class Programmer {
 		return name;
 	}
 
-	public void setKarma(int karma) {
+	public void setKarma(float karma) {
 		this.karma=karma;		
 	}
 

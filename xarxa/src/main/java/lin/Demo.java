@@ -8,6 +8,7 @@ public class Demo {
 	public static void main (String[] args) {
 		
 		List<Programmer> programmers= new ArrayList<Programmer>();
+		
 		Programmer jaume=new Programmer("Jaume");
 		programmers.add(jaume);
 		Programmer isaac=new Programmer("Isaac");
@@ -21,6 +22,9 @@ public class Demo {
 		Programmer ignasi=new Programmer("Ignasi");
 		programmers.add(ignasi);
 		
+		KarmaCalculator karmaCalculator=new KarmaCalculator(programmers);
+		karmaCalculator.calculateKarma();
+		
 		jaume.addRecomendation(cristian);
 		jaume.addRecomendation(isaac);
 		isaac.addRecomendation(david);
@@ -29,6 +33,7 @@ public class Demo {
 		david.addRecomendation(jonathan);
 		david.addRecomendation(ignasi);
 		jonathan.addRecomendation(ignasi);
+		ignasi.addRecomendation(ignasi);
 		
 		for (Programmer p: programmers) {
 			System.out.println(p.getName()+" Karma:"+p.getKarma());

@@ -13,9 +13,7 @@ public class KarmaCalculator {
 	
 	public void calculateKarma() {
 		initialize();
-		for (int i=0;i<4;i++) {
-			step();
-		}
+		step();
 	}
 	
 	public void initialize() {
@@ -25,7 +23,7 @@ public class KarmaCalculator {
 	public void step() {
 		for (Programmer p: programmers) {
 			float karma=0f;
-			for (Programmer r: r.getRecommendedBy()) {
+			for (Programmer r: p.getRecommendedBy()) {
 				karma+=r.getKarma()/r.getRecommends().size();
 			}
 			p.setKarma((1-d)+d*karma);
