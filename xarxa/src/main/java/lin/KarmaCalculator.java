@@ -5,6 +5,7 @@ import java.util.List;
 public class KarmaCalculator {
 	
 	float d=0.85f;	
+	float maxDeltaKarma=0;
 	List<Programmer> programmers;
 	
 	public KarmaCalculator(List<Programmer> programmers) {
@@ -12,21 +13,27 @@ public class KarmaCalculator {
 	}
 	
 	public void calculateKarma() {
-		initialize();
-		step();
+		/*initialize();*/
+		maxDeltaKarma=1;
+		while (maxDeltaKarma>0.001) {
+			maxDeltaKarma=0;
+			step();
+		}
 	}
 	
 	public void initialize() {
 		for (Programmer p: programmers) p.setKarma(1);
 	}
 	
-	public void step() {
+	public void step() {		
 		for (Programmer p: programmers) {
 			float karma=0f;
 			for (Programmer r: p.getRecommendedBy()) {
-				karma+=r.getKarma()/r.getRecommends().size();
-			}
-			p.setKarma((1-d)+d*karma);
+				karma+=r.getPrevKarma()/r.getRecommends().size();
+			}			
+			p.setKarma((1-d)+d*karma); 
+			float deltaKarma=Math.abs(p.getKarma()-p.getPrevKarma());
+			if (deltaKarma>maxDeltaKarma) maxDeltaKarma=deltaKarma;
 		}		
 	}
 
