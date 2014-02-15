@@ -17,9 +17,12 @@ public class DemoFile {
 		KarmaCalculator karmaCalculator=new KarmaCalculator(programmers);
 		karmaCalculator.calculateKarma();		
 				
+		float totalKarma=0;
 		for (Programmer p: programmers) {
-			System.out.println(p.getName()+" Karma:"+p.getKarma()+"("+p.getPrevKarma()+")");
+			System.out.println(p.getName()+" Karma:"+p.getKarma());
+			totalKarma+=p.getKarma();
 		}
+		System.out.println(totalKarma);
 	}
 	
 }
